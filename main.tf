@@ -11,7 +11,7 @@ required_version = ">= 0.14.0"
 # Configure the OpenStack Provider
 provider "openstack" {
   user_name   = "$user_name"
-  tenant_name = "$tenant_name"
+  tenant_id = "$tenant_id"
   password    = "$password"
   auth_url    = "$auth_url"
   region      = "$region"

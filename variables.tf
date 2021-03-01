@@ -16,8 +16,8 @@ variable "auth_url" {
   default = "https://auth.cloud.ovh.net/v3/"
 }
 
-variable "tenant_name" {
-  description = "OpenStack tenant name"
+variable "tenant_id" {
+  description = "OpenStack tenant id"
 }
 
 variable "region" {
@@ -35,4 +35,10 @@ variable  "image_id" {
 
 variable  "flavor_id" {
   description = "OpenStack Flavor ID"
+  default = "d64c3ef6-c061-4e44-85a0-a7f03191b092"
+}
+
+variable "network" {
+  description = "OpenStack network name"
+  default = "Ext-Net"
 }
