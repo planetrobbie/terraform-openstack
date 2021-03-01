@@ -36,7 +36,7 @@ resource "openstack_compute_instance_v2" "myinstance" {
   name            = var.instance_name
   image_id        = var.image_id
   flavor_id       = var.flavor_id
-  key_pair        = "yet-keypair"
+  key_pair        = openstack_compute_keypair_v2.yet-keypair.id
   security_groups = ["default"]
 
   network {
