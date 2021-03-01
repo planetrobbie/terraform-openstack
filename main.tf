@@ -19,7 +19,7 @@ provider "openstack" {
 
 resource "openstack_blockstorage_volume_v2" "vol-01" {
   name = var.volume_name_01
-  size = 10
+  size = 110
 }
 
 #resource "openstack_blockstorage_volume_v2" "vol-02" {
