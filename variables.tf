@@ -42,3 +42,13 @@ variable "network" {
   description = "OpenStack network name"
   default = "Ext-Net"
 }
+
+variable "volume_name_01" {
+  description = "OpenStack volume 01 name"
+  default = "vol01"
+}
+
+variable "volume_name_02" {
+  description = "OpenStack volume 02 name"
+  default = "vol02"
+}

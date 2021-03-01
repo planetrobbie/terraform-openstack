@@ -17,10 +17,10 @@ provider "openstack" {
   region      = var.region
 }
 
-#resource "openstack_blockstorage_volume_v2" "vol-01" {
-#  name = var.volume_name_01
-#  size = 1
-#}
+resource "openstack_blockstorage_volume_v2" "vol-01" {
+  name = var.volume_name_01
+  size = 10
+}
 
 #resource "openstack_blockstorage_volume_v2" "vol-02" {
 #  name = var.volume_name_02
@@ -44,12 +44,12 @@ resource "openstack_compute_instance_v2" "myinstance" {
   }
 }
 
-#resource "openstack_compute_volume_attach_v2" "attached" {
-#  instance_id = var.openstack_compute_instance_v2.myinstance.id
-#  volume_id   = var.openstack_blockstorage_volume_v2.volume-01.id
-#}
+resource "openstack_compute_volume_attach_v2" "attached" {
+  instance_id = openstack_compute_instance_v2.myinstance.id
+  volume_id   = openstack_blockstorage_volume_v2.vol-01.id
+}
 
 #resource "openstack_compute_volume_attach_v2" "attached-01" {
 #  instance_id = var.openstack_compute_instance_v2.myinstance.id
-#  volume_id   = var.openstack_blockstorage_volume_v2.vol-01.id
+#  volume_id   = var.openstack_blockstorage_volume_v2.vol-02.id
 #}
